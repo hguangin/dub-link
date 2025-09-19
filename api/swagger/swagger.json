@@ -1,0 +1,32 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Dub-link API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api/links": {
+      "post": {
+        "summary": "建立短碼",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "targetUrl": { "type": "string" },
+                  "ogTitle": { "type": "string" },
+                  "ogDescription": { "type": "string" },
+                  "ogImageUrl": { "type": "string" },
+                  "expireAt": { "type": "string", "format": "date-time" }
+                }
+              }
+            }
+          }
+        },
+        "responses": { "200": { "description": "成功" } }
+      }
+    }
+  }
+}
